@@ -1,7 +1,9 @@
 defmodule DBML.Project do
-  defstruct [:database_type, :note]
+  defstruct [:name]
 
-  def new(keyword) do
-    struct(__MODULE__, keyword)
+  def new(data) do
+    name = Keyword.get(data, :name)
+
+    %__MODULE__{name: name}
   end
 end
